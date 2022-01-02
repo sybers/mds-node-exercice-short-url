@@ -1,10 +1,3 @@
-function replaceVariables(pageContents, variables) {
-  return pageContents.replace(
-    /\${([A-Z_]+)}/g,
-    (match, parameter) => variables[parameter] ?? match
-  );
-}
-
 function isValidURL(string) {
   try {
     const url = new URL(string);
@@ -15,6 +8,5 @@ function isValidURL(string) {
 }
 
 module.exports = {
-  replaceVariables,
   isValidURL,
 };

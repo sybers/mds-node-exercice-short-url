@@ -1,0 +1,18 @@
+extends layout.pug
+
+block variables
+  - const title = "Your Short URL"
+
+block content
+  h1 Your shortened URL
+  p Write down the short URL, this is the only time you'll be able to see it!
+  .grid
+    section
+      h2 Original URL
+      p
+        a(href=originalURL)= originalURL
+    section
+      h2 Short URL
+      p
+        a(href=shortURL)= shortURL
+  a(href="/" role="button") Generate another URL 

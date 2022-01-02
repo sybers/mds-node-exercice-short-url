@@ -1,0 +1,11 @@
+extends layout.pug
+
+block variables
+  - const title = "Generate"
+
+block content
+  h1 Short URL 
+  form(action="/" method="post")
+    input(type="url" name="url" placeholder="https://www.example.com/" required)
+    br
+    button Generate
