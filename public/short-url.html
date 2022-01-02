@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <title>Your shortened URL</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Your shortened URL</h1>
+      <p>
+        Write down the short URL, this is the only time you'll be able to see it
+        !
+      </p>
+      <div class="grid">
+        <section>
+          <h2>Original URL</h2>
+          <p><a href="${ORIGINAL_URL}">${ORIGINAL_URL}</a></p>
+        </section>
+        <section>
+          <h2>Short URL</h2>
+          <p><a href="${SHORT_URL}">${SHORT_URL}</a></p>
+        </section>
+      </div>
+      <a href="/" role="button">Generate another short URL</a>
+    </main>
+  </body>
+</html>
