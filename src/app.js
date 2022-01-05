@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const path = require("path");
 
 const urlShortener = require("./lib/urlShortener");
@@ -59,9 +58,13 @@ app.use((_req, res) => {
 });
 
 // global error handler
-app.use((err, _req, res, _next) => {
+app.use((err, _req, res, next) => {
   console.error(err);
-  res.send("500 Internal Server Error");
+  next(err);
+});
+
+app.use((err, _req, res, _next) => {
+  res.status(500).send("500 Internal Server Error");
 });
 
 module.exports = app;
